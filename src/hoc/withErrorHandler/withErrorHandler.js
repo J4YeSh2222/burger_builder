@@ -9,7 +9,8 @@ const withErrorHandler=(WrappedComponent,axios)=>{
             error:null
         }
 
-        componentDidMount(){
+        constructor(props){
+            super(props);
             axios.interceptors.request.use(req=>{
                 this.setState({error:null});
                 return req;
